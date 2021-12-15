@@ -1,4 +1,4 @@
-const KthLargest = require('./index')
+const KthLargest = require('./heap')
 
 function runner (testSeq) {
   const [k, nums] = testSeq[0];
