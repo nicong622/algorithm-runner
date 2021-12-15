@@ -12,13 +12,14 @@ function shuffle(arr) {
   const len = arr.length;
 
   for (let i = 0; i < len; i++) {
-    let j = randomInRange(1, len-i)
-    let temp = arr[j];
-    arr[j] = arr[i];
-    arr[i] = temp;
+    let j = randomInRange(1, len-i);
+    [arr[i], arr[j]] = [arr[j], arr[i]]
   }
 
   return arr;
 }
 
-module.exports = shuffle;
+module.exports = {
+  shuffle,
+  randomInRange
+}
