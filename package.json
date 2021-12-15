@@ -1,0 +1,13 @@
+{
+  "name": "algorithm-runner",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "nicong <liangningcong@gmail.com>",
+  "scripts": {
+    "test": "jest"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "jest": "^27.4.5"
+  }
+}
