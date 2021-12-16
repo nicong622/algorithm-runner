@@ -1,4 +1,4 @@
-const shellSort = require('./index')
+import shellSort from './index'
 
 const input = [4,3,5,9,7,1,2,0,10]
 
