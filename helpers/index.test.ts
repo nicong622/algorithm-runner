@@ -4,7 +4,7 @@ import { genRandomeArray } from './index';
 describe.each<[number, [number, number]]>([
   [1, [1, 10]],
   [10, [1, 100]]
-])('genRandomeArray(%d, %o)', (len, range) => {
+])('genRandomeArray(%d, %p)', (len, range) => {
   const arr = genRandomeArray(len, range);
   const [min, max] = findMinMax(arr)
 
