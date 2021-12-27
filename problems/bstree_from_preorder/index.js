@@ -20,36 +20,38 @@
  * @return {TreeNode}
  */
 var bstFromPreorder = function(preorder) {
-  const root = new TreeNode(preorder[0]);
-  let curr = root;
-  let i = 1;
+  const [left, right] = splitVals(preorder);
+  const rootNode = new TreeNode(preorder[0]);
 
-  while(i < preorder.length) {
-    const newNode = new TreeNode(preorder[i])
-
-    while (curr.val) {
-      if (preorder[i] < curr.val) {
-        if (curr.left) {
-          curr = curr.left;
-        } else {
-          curr.left = newNode;
-          break;
-        }
-      } else {
-        if (curr.right) {
-          curr = curr.right;
-        } else {
-          curr.right = newNode;
-          break;
-        }
-      }
-    }
-
-    curr = root;
-    i++;
+  if (left.length) {
+    rootNode.left = bstFromPreorder(left);
   }
 
-  return root;
+  if (right.length) {
+    rootNode.right = bstFromPreorder(right);
+  }
+
+  return rootNode;
 };
 
-export default bstFromPreorder
+function splitVals(arr) {
+  let i = 1;
+  let j = 1;
+  let left = [];
+  let right = [];
+  const root = arr[0];
+
+  while (j < arr.length) {
+    if (arr[j] >= root) break;
+    j += 1;
+  }
+
+  left = arr.slice(i, j);
+  right = arr.slice(j)
+
+  return [left, right]
+}
+
+// export default bstFromPreorder
+
+console.log(bstFromPreorder([8,5,1,7,10,12]))
