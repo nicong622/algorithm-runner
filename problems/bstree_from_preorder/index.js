@@ -34,6 +34,7 @@ var bstFromPreorder = function(preorder) {
   return rootNode;
 };
 
+// 找到左子树和右子树分别包含哪些值
 function splitVals(arr) {
   let i = 1;
   let j = 1;
